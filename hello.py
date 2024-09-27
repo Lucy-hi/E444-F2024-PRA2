@@ -19,7 +19,7 @@ def check_email(form, field):
 
 class NameForm(FlaskForm):
     name = StringField('What is your name?', validators=[DataRequired()])
-    email = StringField('What is your UofT Email address?', validators=[DataRequired(), Email()])
+    email = StringField('What is your UofT Email address?', validators=[DataRequired(), check_email])
     submit = SubmitField('Submit')
 
 @app.errorhandler(404)
